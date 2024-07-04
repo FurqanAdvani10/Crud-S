@@ -1,0 +1,49 @@
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child{
+    width:25%;
+}
+.addBut{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-menu-dark.ant-menu-inline .ant-menu-item, :where(.css-dev-only-do-not-override-j9bb5n).ant-menu-dark>.ant-menu.ant-menu-inline .ant-menu-item{
+    margin-top: 20px;
+}
+
+.Delbtn{
+    margin: 0 10px;
+    background: none repeat scroll 0;
+    color: black;
+    box-shadow: none;
+    padding: 0px  11px 5px;
+}
+
+.Delbtn:hover{
+    background-color: transparent !important;
+    color: black !important;
+}
+
+.textInp{
+    margin: 10px 0 8px;
+}
+
+.submitClas{
+    margin: 10px 0;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-modal .ant-modal-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-image{
+    margin: 0 5px;
+    border-radius: 5pxs;
+
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload-list.ant-upload-list-picture-card, :where(.css-dev-only-do-not-override-m4timi).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload-list.ant-upload-list-picture-card, :where(.css-dev-only-do-not-override-m4timi).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload-list.ant-upload-list-picture-circle, :where(.css-dev-only-do-not-override-m4timi).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload-list.ant-upload-list-picture-circle{
+    margin: 12px 0 ;
+}

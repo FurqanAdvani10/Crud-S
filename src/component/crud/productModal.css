@@ -1,0 +1,17 @@
+.modalHeadng{
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-image .ant-image-img{
+    border-radius: 10px;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select, :where(.css-dev-only-do-not-override-j9bb5n).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select {
+    margin: 10px 0 8px;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-btn-primary {
+    
+    margin-top: 10px;
+}
