@@ -16,6 +16,7 @@ const getBase64 = (file) =>
     });
 
 const ProductUpdateModal = ({ open, onClose, onSave, initialValues, formRef }) => {
+   
     const [previewOpen, setPreviewOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [fileList, setFileList] = useState([]);
@@ -125,7 +126,7 @@ const ProductUpdateModal = ({ open, onClose, onSave, initialValues, formRef }) =
                             )}
                         </div>
                         <Button type="primary" htmlType="submit" className='saveforall'>
-                            Save
+                            Update Category
                         </Button>
                     </Form>
                 )}

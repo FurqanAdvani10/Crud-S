@@ -6,8 +6,8 @@ import { CategorySchema } from "./categorySchema";
 import "../crud/productModal.css";
 import { Select, Space } from 'antd';
 import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, updateDoc } from 'firebase/firestore';
-import { db } from '../../firebaseConfig';
-import { renderOptions } from "../../utils/method";
+import { db } from '../../../firebaseConfig';
+import { renderOptions } from "../../../utils/method";
 import CategoryUpdate from "./cateUpdate"
 // import Categories from './categories';
 
@@ -29,9 +29,9 @@ const SubCategoryModal = ({ open, onClose, initialValues }) => {
     const [previewImage, setPreviewImage] = useState('');
     const [fileList, setFileList] = useState([]);
     const formRef = useRef(null);
-    // const [tableData, setTableData] = useState([]);
+    const [tableData, setTableData] = useState([]);
     const [editingItem, setEditingItem] = useState(null);
-    // const [updateModalOpen, setUpdateModalOpen] = useState(false);
+    const [updateModalOpen, setUpdateModalOpen] = useState(false);
 
     useEffect(() => {
         if (!open) {
@@ -69,53 +69,53 @@ const SubCategoryModal = ({ open, onClose, initialValues }) => {
     // all conditions  
 
 
-    const saveData = async (values) => {
-        console.log("sarim")
-        try {
-            if (editingItem) {
-                console.log(editingItem, "asdyasgy");
-                const docRef = doc(db, 'subCategory', editingItem.key);
-                const docSnapshot = await getDoc(docRef);
-
-                if (docSnapshot.exists()) {
-                    await updateDoc(docRef, { ...values, images: values.images || [] });
-                    console.log('Document updated successfully');
-                } else {
-                    console.log('Document does not exist, creating a new one');
-                    await setDoc(docRef, { ...values, images: values.images || [] });
-                    console.log('Document created successfully');
-                }
-                get();
-                setEditingItem(null);
-            } else {
-                await addDoc(collection(db, 'subCategory'), { ...values, images: values.images || [] });
-                console.log('Document added successfully');
-                get();
-            }
-
-            setFileList([]);
-            formRef.current?.resetForm();
-            onClose && onClose();
-        } catch (error) {
-            console.error('Error saving data:', error);
-        }
-    };
-
     // const saveData = async (values) => {
-    //     if (editingItem) {
-    //         console.log(editingItem?.key, "asdyasgy")
-    //         // const docRe  f = doc(db, 'subCategory', editingItem.key);
-    //         // await updateDoc(docRef, { ...values, images: values.images || [] });
-    //         // get()
-    //         // setEditingItem(null);
-    //     } else {
-    //         // await addDoc(collection(db, 'subCategory'), { ...values, images: fileList.map(file => file.url || file.thumbUrl || file.preview) });
-    //         // get();
+    //     console.log(values)
+    //     try {
+    //         if (editingItem) {
+    //             console.log(editingItem, "asdyasgy");
+    //             const docRef = doc(db, 'SubCategory', editingItem.key);
+    //             const docSnapshot = await getDoc(docRef);
+
+    //             if (docSnapshot.exists()) {
+    //                 await updateDoc(docRef, { ...values, images: values.images || [] });
+    //                 console.log('Document updated successfully');
+    //             } else {
+    //                 console.log('Document does not exist, creating a new one');
+    //                 await setDoc(docRef, { ...values, images: values.images || [] });
+    //                 console.log('Document created successfully');
+    //             }
+    //             get();
+    //             setEditingItem(null);
+    //         } else {
+    //             await addDoc(collection(db, 'SubCategory'), { ...values, images: values.images || [] });
+    //             console.log('Document added successfully');
+    //             get();
+    //         }
+
+    //         setFileList([]);
+    //         formRef.current?.resetForm();
+    //         onClose && onClose();
+    //     } catch (error) {
+    //         console.error('Error saving data:', error);
     //     }
-    //     // setFileList([]);
-    //     // formRef.current?.resetForm();
-    //     // onClose && onClose();
-    // }
+    // };
+
+    const saveData = async (values) => {
+        if (editingItem) {
+            console.log(editingItem?.key, "asdyasgy")
+            const docRef = doc(db, 'subCategory', editingItem.key);
+            await updateDoc(docRef, { ...values, images: values.images || [] });
+            get()
+            setEditingItem(null);
+        } else {
+            await addDoc(collection(db, 'subCategory'), { ...values, images: fileList.map(file => file.url || file.thumbUrl || file.preview) });
+            get();
+        }
+        setFileList([]);
+        formRef.current?.resetForm();
+        onClose && onClose();
+    }
 
     const handleRemove = (file) => {
         const newFileList = fileList.filter(item => item.uid !== file.uid);

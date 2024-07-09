@@ -17,6 +17,7 @@ const getBase64 = (file) =>
     });
 
 const ProductModal = ({ open, onClose, onSave, initialValues, formRef }) => {
+ 
     const [previewOpen, setPreviewOpen] = useState(false);
     const [previewImage, setPreviewImage] = useState('');
     const [fileList, setFileList] = useState([]);

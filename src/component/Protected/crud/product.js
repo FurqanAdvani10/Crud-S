@@ -14,8 +14,9 @@ import { Layout, Menu, theme } from 'antd';
 import ProductModal from './productModal';
 import ProductUpdateModal from './updateModal';
 import { collection, addDoc, updateDoc, doc, deleteDoc, getDocs, query } from 'firebase/firestore';
-import { db } from '../../firebaseConfig';
-import Category from "../categories/categories"
+import { db } from '../../../firebaseConfig';
+// import Category from "./categories/categories"
+import Category from "./../categories/categories";
 const { Header, Sider, Content } = Layout;
 
 const Product = () => {
